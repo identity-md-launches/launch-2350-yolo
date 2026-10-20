@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "YoloToken",
+    "name": "Yolo",
+    "symbol": "YOLO",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "3500000000000000000000",
+    "remainderTo": "0x612a9bb008e16ef2d24f41dae9fc661831d93367"
+  },
+  "notes": "YoloToken (src/YoloToken.sol) is a fixed-supply ERC-20: name Yolo, symbol YOLO, 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 YOLO (1000000000000000000000000000 minor units) once to msg.sender, the factory, which pays it out through the launch. totalSupply() returns the constant TOTAL_SUPPLY and nothing can mint or burn afterwards. There is no owner, no pause, no blocklist, no fee, no exemptions, no receive or fallback, no delegatecall and no selfdestruct; transfers move exactly the amount requested from any sender to any recipient, so the factory-to-distributor, distributor-to-claimant, pool seed, remainder and trader flows arrive whole. transferFrom treats an allowance of type(uint256).max as unlimited. The token does not take the factory, pool manager or launch number because it has no transfer rules to exempt them from. No application contracts are deployed with this launch. Pool: paired with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7, fee 12500 (1.25%), tick spacing 60; initialPrice is provenance only, the deployer derives the opening price from economics.initialMarketCapWei and totalSupply. Economics are the requester's as given by the job: 80% of the supply seeds the pool at a 3,500 IMD opening market cap and the remainder of the requester's share goes to 0x612a9bb008e16ef2d24f41dae9fc661831d93367."
+}
